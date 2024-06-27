@@ -1,0 +1,19 @@
+{
+  "scripts": {
+    "dev": "npx tailwindcss -i assets/css/tailwind.css -o assets/css/styles.css --watch",
+    "build": "npx tailwindcss -i assets/css/tailwind.css -o assets/css/styles.css --minify"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.1"
+  },
+  "dependencies": {
+    "caniuse-lite": "^1.0.30001637",
+    "swiper": "^11.0.7"
+  },
+  "name": "free-blue-star-tailwind-landing-page-template-main",
+  "version": "1.0.0",
+  "description": "## Launch a Landing Page in Minutes",
+  "main": "tailwind.config.js",
+  "author": "",
+  "license": "ISC"
+}
