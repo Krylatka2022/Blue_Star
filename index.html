@@ -73,8 +73,12 @@
   </nav>
 
   <section id="home" class="bg-white py-16">
+    
     <div class="container mx-auto flex flex-col md:flex-row items-center justify-between">
       <!-- Left column: Description and buttons -->
+       <div class="grid auto-cols-max grid-flow-col gap-5 text-center">
+ 
+</div>
       <div class="md:w-1/2 text-center md:text-left mb-8 md:mb-0">
         <h2 class="text-5xl font-bold mb-4">Blue Star <span class="text-primary">Landing</span> Page</h2>
         <p class="my-7">Tailwind CSS is an open source CSS framework. The main feature of this library is that, unlike
@@ -92,6 +96,44 @@
       </div>
     </div>
   </section>
+
+
+  <!--Счетчик-->
+  <section class="bg-white py-16" id="countdown">
+   <div class="container  items-center justify-between">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+
+     <div class="bg-primary text-white font-semibold px-4 rounded inline-block items-center justify-center min-w-[110px] p-6 rounded-lg shadow-lg text-center group">
+    <h3 class="countdown font-mono text-5xl">
+      <p style="--value:15;">Число</p>
+     </h3>
+     days
+     </div>
+
+  <div class="bg-primary text-white font-semibold px-4 rounded inline-block items-center justify-center min-w-[110px] p-6 rounded-lg shadow-lg text-center group">
+    <h3 class="countdown font-mono text-5xl">
+      <p style="--value:10;">any</p>
+    </h3>
+    hours
+  </div>
+
+  <div class="bg-primary text-white font-semibold px-4 rounded inline-block items-center justify-center min-w-[110px] p-6 rounded-lg shadow-lg text-center group">
+    <h3 class="countdown font-mono text-5xl">
+      <p style="--value:24;">any</p>
+    </h3>
+    min
+  </div>
+
+  <div class="bg-primary text-white font-semibold px-4 rounded inline-block  items-center justify-center min-w-[110px] p-6 rounded-lg shadow-lg text-center group">
+    <h3 class="countdown font-mono text-5xl">
+      <p style="--value:${counter};">any</p>
+    </h3>
+    sec
+  </div>
+
+ </div>
+</div>
+</section>
 
   <section id="aboutus" class="py-16 bg-gray-dark">
     <div class="container mx-auto flex flex-col md:flex-row items-center justify-between">
