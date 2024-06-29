@@ -18,30 +18,30 @@ function startCountersOnScroll() {
 
   // Function to start counters
   function startCounters() {
-      var counters = document.querySelectorAll('.counter');
-      var speed = 2000; // The lower the number, the faster the counter increases
+    var counters = document.querySelectorAll('.counter');
+    var speed = 2000; // The lower the number, the faster the counter increases
 
-      counters.forEach(counter => {
-          var target = +counter.getAttribute('data-target-value');
-          var count = 0;
+    counters.forEach(counter => {
+      var target = +counter.getAttribute('data-target-value');
+      var count = 0;
 
-          var updateCounter = setInterval(() => {
-              count++;
-              counter.innerText = count;
+      var updateCounter = setInterval(() => {
+        count++;
+        counter.innerText = count;
 
-              if (count === target) {
-                  clearInterval(updateCounter);
-              }
-          }, speed / target);
-      });
+        if (count === target) {
+          clearInterval(updateCounter);
+        }
+      }, speed / target);
+    });
   }
 
   // Check if user has scrolled to success-metrics section
   function checkScroll() {
-      if (window.scrollY > successMetricsSectionPosition) {
-          startCounters();
-          window.removeEventListener('scroll', checkScroll);
-      }
+    if (window.scrollY > successMetricsSectionPosition) {
+      startCounters();
+      window.removeEventListener('scroll', checkScroll);
+    }
   }
 
   // Event listener for scroll
@@ -56,11 +56,11 @@ startCountersOnScroll();
 new Swiper('.swiper', {
   slidesPerView: 1,
   loop: true,
-  autoplay: {                       
-      delay: 3000,  
+  autoplay: {
+    delay: 3000,
   },
-  pagination: {                      
-      el: '.swiper-pagination',
+  pagination: {
+    el: '.swiper-pagination',
   },
   navigation: {
     nextEl: '.swiper-button-next',
@@ -69,18 +69,18 @@ new Swiper('.swiper', {
 });
 
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
   const filterButtons = document.querySelectorAll('.filter-button');
 
   filterButtons.forEach(button => {
     button.addEventListener('click', () => {
       const filterValue = button.textContent.toLowerCase();
-  
+
       const portfolioItems = document.querySelectorAll('.portfolio-item');
-  
+
       portfolioItems.forEach(item => {
         const itemCategories = item.querySelector('span').textContent.toLowerCase();
-  
+
         if (filterValue === 'all' || itemCategories.includes(filterValue)) {
           item.classList.remove('hidden');
         } else {
@@ -89,24 +89,24 @@ document.addEventListener('DOMContentLoaded', function() {
       });
     });
   });
-  
+
 });
 
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function (e) {
-      e.preventDefault();
+    e.preventDefault();
 
-      const targetId = this.getAttribute('href');
-      const targetSection = document.querySelector(targetId);
-      if (targetSection) {
-          const offset = 88;
-          const targetPosition = targetSection.getBoundingClientRect().top + window.scrollY - offset;
+    const targetId = this.getAttribute('href');
+    const targetSection = document.querySelector(targetId);
+    if (targetSection) {
+      const offset = 88;
+      const targetPosition = targetSection.getBoundingClientRect().top + window.scrollY - offset;
 
-          window.scrollTo({
-              top: targetPosition,
-              behavior: 'smooth'
-          });
-      }
+      window.scrollTo({
+        top: targetPosition,
+        behavior: 'smooth'
+      });
+    }
   });
 });
 
@@ -114,27 +114,27 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 var countDownDate = new Date("Jan 5, 2030 15:37:25").getTime();
 
 // Update the count down every 1 second
-var x = setInterval(function() {
+var x = setInterval(function () {
 
   // Get today's date and time
   var now = new Date().getTime();
-    
+
   // Find the distance between now and the count down date
   var distance = countDownDate - now;
-    
+
   // Time calculations for days, hours, minutes and seconds
   var days = Math.floor(distance / (1000 * 60 * 60 * 24));
   var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
   var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
   var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-    
+
   // Output the result in an element with id="demo"
   console.log(days + "d " + hours + "h "
-  + minutes + "m " + seconds + "s ");
-    document.querySelectorAll("h3.countdown")[0].innerHTML=days;
-      document.querySelectorAll("h3.countdown")[1].innerHTML=hours;
-      document.querySelectorAll("h3.countdown")[2].innerHTML=minutes;
-      document.querySelectorAll("h3.countdown")[3].innerHTML=seconds;
+    + minutes + "m " + seconds + "s ");
+  document.querySelectorAll("h3.countdown")[0].innerHTML = days;
+  document.querySelectorAll("h3.countdown")[1].innerHTML = hours;
+  document.querySelectorAll("h3.countdown")[2].innerHTML = minutes;
+  document.querySelectorAll("h3.countdown")[3].innerHTML = seconds;
   // If the count down is over, write some text 
   if (distance < 0) {
     clearInterval(x);
@@ -143,4 +143,9 @@ var x = setInterval(function() {
 }, 1000);
 
 
-
+// Добавление обработчика события beforeunload
+window.addEventListener('beforeunload', function (e) {
+  var confirmationMessage = 'уверены, что хотите выйти?';
+  e.returnValue = confirmationMessage; // Стандарт для большинства браузеров
+  return confirmationMessage; // Для совместимости с некоторыми старыми браузерами
+});
