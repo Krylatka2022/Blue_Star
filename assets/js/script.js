@@ -1,10 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
-<<<<<<< HEAD
   console.log(123457);
   
-=======
-  console.log(1234);
->>>>>>> c5cd4e402190c55872bfb313c168f81d30396700
   const hamburgerBtn = document.getElementById('hamburger');
   const mobileMenu = document.querySelector('.mobile-menu');
 
