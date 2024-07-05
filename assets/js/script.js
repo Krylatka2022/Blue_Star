@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-  console.log(123);
+  console.log(1234);
   const hamburgerBtn = document.getElementById('hamburger');
   const mobileMenu = document.querySelector('.mobile-menu');
 
