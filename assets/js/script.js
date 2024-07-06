@@ -14,11 +14,13 @@ function greetUser() {
 }
 function updateTime() {
   const now = new Date();
-  const hours = now.getHours();
-  const minutes = now.getMinutes();
-  const seconds = now.getSeconds();
-  document.querySelector(".the_time").innerText = `${hours}:${minutes}:${seconds}`;
+  const hours = String(now.getHours()).padStart(2, '0'); // Добавляем '0' в начало, если час состоит из одной цифры
+  const minutes = String(now.getMinutes()).padStart(2, '0'); // То же самое для минут
+  const seconds = String(now.getSeconds()).padStart(2, '0'); // И для секунд
+  document.getElementById("current-time").innerText = `${hours}:${minutes}:${seconds}`;
 }
+
+setInterval(updateTime, 1000); // Обновление каждую секунду
 function guessNumber() {
   const randomNumber = Math.floor(Math.random() * 5) + 1;
   const userGuess = prompt("Угадайте число от 1 до 5");
