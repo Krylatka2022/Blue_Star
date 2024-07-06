@@ -1,5 +1,48 @@
+function greetUser() {
+  const now = new Date();
+  let greeting;
+
+  if (now.getHours() < 12) {
+      greeting = "Доброе утро";
+  } else if (now.getHours() < 18) {
+      greeting = "Добрый день";
+  } else {
+      greeting = "Вечер";
+  }
+
+  document.getElementById("greeting").innerText = greeting;
+}
+function updateTime() {
+  const now = new Date();
+  const hours = now.getHours();
+  const minutes = now.getMinutes();
+  const seconds = now.getSeconds();
+  document.getElementById(".the_time").innerText = `${hours}:${minutes}:${seconds}`;
+}
+function guessNumber() {
+  const randomNumber = Math.floor(Math.random() * 5) + 1;
+  const userGuess = prompt("Угадайте число от 1 до 5");
+
+  if (parseInt(userGuess) === randomNumber) {
+      alert("Поздравляем! Вы угадали число.");
+  } else {
+      alert("Не угадали. Попробуйте еще раз!");
+  }
+}
+
+
+// Вызываем функцию при загрузке страницы
+//window.onload = greetUser;
+
 document.addEventListener("DOMContentLoaded", function () {
+  setInterval(updateTime, 1000); 
   console.log(123457);
+  greetUser();
+  startTime = new Date().getTime();
+  window.onbeforeunload = function() {
+    const timeSpent = new Date().getTime() - startTime;
+    alert(`Вы провели ${timeSpent / 60000} минут(ы) на странице.`);
+};
   
   const hamburgerBtn = document.getElementById('hamburger');
   const mobileMenu = document.querySelector('.mobile-menu');
