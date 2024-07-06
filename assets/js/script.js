@@ -17,7 +17,7 @@ function updateTime() {
   const hours = now.getHours();
   const minutes = now.getMinutes();
   const seconds = now.getSeconds();
-  document.getElementById(".the_time").innerText = `${hours}:${minutes}:${seconds}`;
+  document.querySelector(".the_time").innerText = `${hours}:${minutes}:${seconds}`;
 }
 function guessNumber() {
   const randomNumber = Math.floor(Math.random() * 5) + 1;
@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", function () {
   console.log(123457);
   greetUser();
   startTime = new Date().getTime();
-  window.onbeforeunload = function() {
+  document.querySelector("#exit").onclick = function() {
     const timeSpent = new Date().getTime() - startTime;
     alert(`Вы провели ${timeSpent / 60000} минут(ы) на странице.`);
 };
