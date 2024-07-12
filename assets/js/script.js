@@ -17,7 +17,8 @@ function updateTime() {
   const hours = String(now.getHours()).padStart(2, '0'); // Добавляем '0' в начало, если час состоит из одной цифры
   const minutes = String(now.getMinutes()).padStart(2, '0'); // То же самое для минут
   const seconds = String(now.getSeconds()).padStart(2, '0'); // И для секунд
-  document.getElementById("current-time").innerText = `${hours}:${minutes}:${seconds}`;
+  
+  document.getElementById(".the_time").innerText = `${hours}:${minutes}:${seconds}`;
 }
 
 setInterval(updateTime, 1000); // Обновление каждую секунду
