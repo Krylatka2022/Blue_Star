@@ -252,6 +252,7 @@
         </div>
 
         <div class="md:w-1/2">
+          <!-- вот здесьили нет -->
           <h2 class="text-5xl font-bold mb-4 text-white">
             Планеты <span class="text-primary">Солнечной Системы</span>
           </h2>
@@ -408,23 +409,28 @@
           </p>
         </div>
         <div class="flex flex-col md:flex-row items-center mb-8">
+          <!-- вот -->
           <button
+            data-filter="all"
             class="filter-button bg-primary hover:bg-secondary px-4 py-2 mr-2 mb-2 text-white rounded"
           >
             Все
           </button>
           <button
+            data-filter="planets"
             class="filter-button bg-primary hover:bg-secondary px-4 py-2 mr-2 mb-2 text-white rounded"
           >
             Планеты
           </button>
           <button
             class="filter-button bg-primary hover:bg-secondary px-4 py-2 mr-2 mb-2 text-white rounded"
+            data-filter="galactics"
           >
             Галактики
           </button>
           <button
             class="filter-button bg-primary hover:bg-secondary px-4 py-2 mr-2 mb-2 text-white rounded"
+            data-filter="tuman"
           >
             Туманности
           </button>
@@ -432,7 +438,7 @@
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
           <div
-            class="group portfolio-item planets relative hover:shadow-lg shadow-md rounded-lg overflow-hidden"
+            class="group portfolio-item relative hover:shadow-lg shadow-md rounded-lg overflow-hidden"
           >
             <a href="#">
               <img
@@ -452,9 +458,9 @@
                   Меркурий
                 </h3>
                 <span
-                  class="text-sm font-bold text-secondary group-hover:text-primary"
+                  class="planets text-sm font-bold text-secondary group-hover:text-primary"
                   >Самая близкая к Солнцу планета</span
-                >
+                ><!-- здесь написано планеты: поэтому при нажатии кнопки это показывается на экране-->
               </div>
             </a>
           </div>
@@ -479,8 +485,9 @@
                 >
                   Марс
                 </h3>
+                <!-- тут также надо сделать js смотрит что в span-->
                 <span
-                  class="text-sm font-bold text-secondary group-hover:text-primary"
+                  class="planets text-sm font-bold text-secondary group-hover:text-primary"
                   >Красная планета</span
                 >
               </div>
@@ -507,7 +514,7 @@
                   Сатурн
                 </h3>
                 <span
-                  class="text-sm font-bold text-secondary group-hover:text-primary"
+                  class="planets text-sm font-bold text-secondary group-hover:text-primary"
                   >Жемчужина Солнечной системы</span
                 >
               </div>
@@ -537,7 +544,7 @@
                   Млечный путь
                 </h3>
                 <span
-                  class="text-sm font-bold text-secondary group-hover:text-primary text-center"
+                  class="galactics text-sm font-bold text-secondary group-hover:text-primary text-center"
                 >
                   Галактика, в которой находится Земля и Солнечная система</span
                 >
@@ -565,7 +572,7 @@
                   Магеллановы облака
                 </h3>
                 <span
-                  class="text-sm font-bold text-secondary group-hover:text-primary text-center"
+                  class="galactics text-sm font-bold text-secondary group-hover:text-primary text-center"
                 >
                   Две крупнейших галактики-спутника Млечного Пути
                 </span>
@@ -593,7 +600,7 @@
                   Галактика Андромеды
                 </h3>
                 <span
-                  class="text-sm font-bold text-secondary group-hover:text-primary text-center"
+                  class="galactics text-sm font-bold text-secondary group-hover:text-primary text-center"
                   >Cпиральная галактика, наблюдаемая в созвездии Андромеды</span
                 >
               </div>
@@ -624,7 +631,7 @@
                   Туманность Улитка
                 </h3>
                 <span
-                  class="text-sm font-bold text-secondary group-hover:text-primary text-center"
+                  class="tuman text-sm font-bold text-secondary group-hover:text-primary text-center"
                   >Планетарная туманность в созвездии Водолей на расстоянии 650
                   световых лет от Солнца</span
                 >
@@ -652,7 +659,7 @@
                   Туманность Эскимос
                 </h3>
                 <span
-                  class="text-sm font-bold text-secondary group-hover:text-primary text-center"
+                  class="tuman text-sm font-bold text-secondary group-hover:text-primary text-center"
                   >Биполярная планетарная туманность, расположенная в созвездии
                   Близнецов</span
                 >
@@ -680,7 +687,7 @@
                   Туманность Карандаш
                 </h3>
                 <span
-                  class="text-sm font-bold text-secondary group-hover:text-primary text-center"
+                  class="tuman text-sm font-bold text-secondary group-hover:text-primary text-center"
                 >
                   Эмиссионная туманность в созвездии Паруса. Является небольшой
                   частью остатка сверхновой в Парусах, расположена вблизи

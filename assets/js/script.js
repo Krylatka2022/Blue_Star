@@ -121,14 +121,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
   filterButtons.forEach(button => {
     button.addEventListener('click', () => {
-      const filterValue = button.textContent.toLowerCase();
-
+      const filterValue = button.dataset.filter;//textContent.replace(/\s/g, '').toLowerCase();
+      // dataset.
       const portfolioItems = document.querySelectorAll('.portfolio-item');
 
       portfolioItems.forEach(item => {
-        const itemCategories = item.querySelector('span').textContent.toLowerCase();
+        const itemCategories = item.querySelector('span').classList;
 
-        if (filterValue === 'all' || itemCategories.includes(filterValue)) {
+        if (filterValue == 'all' || itemCategories.contains(filterValue)) {
           item.classList.remove('hidden');
         } else {
           item.classList.add('hidden');
