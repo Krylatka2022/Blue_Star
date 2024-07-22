@@ -3,11 +3,11 @@ function greetUser() {
   let greeting;
 
   if (now.getHours() < 12) {
-      greeting = "Доброе утро";
+    greeting = "Доброе утро";
   } else if (now.getHours() < 18) {
-      greeting = "Добрый день";
+    greeting = "Добрый день";
   } else {
-      greeting = "Вечер";
+    greeting = "Вечер";
   }
 
   document.getElementById("greeting").innerText = greeting;
@@ -17,7 +17,7 @@ function updateTime() {
   const hours = String(now.getHours()).padStart(2, '0'); // Добавляем '0' в начало, если час состоит из одной цифры
   const minutes = String(now.getMinutes()).padStart(2, '0'); // То же самое для минут
   const seconds = String(now.getSeconds()).padStart(2, '0'); // И для секунд
-  
+
   document.querySelector(".the_time").innerText = `${hours}:${minutes}:${seconds}`;
 }
 
@@ -27,9 +27,9 @@ function guessNumber() {
   const userGuess = prompt("Угадайте число от 1 до 5");
 
   if (parseInt(userGuess) === randomNumber) {
-      alert("Поздравляем! Вы угадали число.");
+    alert("Поздравляем! Вы угадали число.");
   } else {
-      alert("Не угадали. Попробуйте еще раз!");
+    alert("Не угадали. Попробуйте еще раз!");
   }
 }
 
@@ -38,15 +38,15 @@ function guessNumber() {
 //window.onload = greetUser;
 
 document.addEventListener("DOMContentLoaded", function () {
-  setInterval(updateTime, 1000); 
+  setInterval(updateTime, 1000);
   console.log(123457);
   greetUser();
   startTime = new Date().getTime();
-  document.querySelector("#exit").onclick = function() {
+  document.querySelector("#exit").onclick = function () {
     const timeSpent = new Date().getTime() - startTime;
     alert(`Вы провели ${timeSpent / 60000} минут(ы) на странице.`);
-};
-  
+  };
+
   const hamburgerBtn = document.getElementById('hamburger');
   const mobileMenu = document.querySelector('.mobile-menu');
 
@@ -138,6 +138,37 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
 });
+
+// document.addEventListener('DOMContentLoaded', function () {
+//   const filterButtons = document.querySelectorAll('.filter-button');
+
+//   filterButtons.forEach(button => {
+//     button.addEventListener('click', function () {
+//       const filterValue = this.textContent.toLowerCase();
+//       const portfolioItems = document.querySelectorAll('.portfolio-item');
+
+//       // Сбрасываем видимость всех элементов портфолио
+//       portfolioItems.forEach(item => {
+//         item.classList.add('hidden');
+//       });
+
+//       // Показываем элементы, соответствующие выбранному фильтру
+//       if (filterValue !== 'all') {
+//         portfolioItems.forEach(item => {
+//           const itemClass = Array.from(item.classList).join(' ');
+//           if (itemClass.includes(filterValue)) {
+//             item.classList.remove('hidden');
+//           }
+//         });
+//       } else {
+//         // Если выбрана категория "Все", показываем все элементы
+//         portfolioItems.forEach(item => {
+//           item.classList.remove('hidden');
+//         });
+//       }
+//     });
+//   });
+// });
 
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function (e) {
